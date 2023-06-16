@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import type { FC, ReactNode } from "react";
 import { Layout } from '~/components/common';
 import { api } from "~/utils/api";
+import { Analytics } from '@vercel/analytics/react';
 
 
 const Noop: FC<{ children?: ReactNode }> = ({ children }) => <>{children}</>
@@ -15,6 +16,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     <>
       <Layout pageProps={pageProps}>
         <Component {...pageProps} />
+        <Analytics></Analytics>
       </Layout>
     </>
   )
