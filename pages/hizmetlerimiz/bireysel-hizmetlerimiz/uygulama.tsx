@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, SEO } from "~/components/common";
+import { Layout, ResponsiveImage, SEO } from "~/components/common";
 
 import BireyselUygulamaBackgroundImage from "@public/bireysel-uygulama-background.jpg";
 import SertPeyzajImage from "@public/sert-peyzaj.jpg";
@@ -94,7 +94,9 @@ export default function Tasarim() {
         title="Uygulama - Bireysel Hizmetlerimiz"
         description="Kahyaoğlu Peyzaj Bireysel Hizmetlerimiz Uygulama"
       />
-      <div
+      <ResponsiveImage imageUrl={BireyselUygulamaBackgroundImage.src} title1="Bireysel Uygulama" title2="Servislerimiz" alt="Bireysel Uygulama" />
+
+      {/* <div
         className="w-full relative aspect-[2.2]
         "
       >
@@ -112,7 +114,7 @@ export default function Tasarim() {
             priority
           />
         </div>
-      </div>
+      </div> */}
       {/* <div
         className="relative w-full bg-black bg-opacity-40 bg-cover bg-blend-darken"
         style={{

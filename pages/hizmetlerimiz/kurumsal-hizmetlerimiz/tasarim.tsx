@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, SEO } from "~/components/common";
+import { Layout, ResponsiveImage, SEO } from "~/components/common";
 
 import KurumsalTasarimBackgroundImage from "@public/kurumsal-tasarim-background.jpg";
 import tasarim_image from "@public/3d-tasarim.jpg";
@@ -81,7 +81,9 @@ export default function Tasarim() {
           <h1 className="pb-8 text-3xl font-semibold">Kurumsal Tasarım</h1>
         </div>
       </div> */}
-      <div
+      <ResponsiveImage imageUrl={KurumsalTasarimBackgroundImage.src} title1="Kurumsal Tasarım" title2="Servislerimiz" alt="Kurumsal Tasarım" />
+
+      {/* <div
         className="w-full relative aspect-[2.2]
         "
       >
@@ -99,7 +101,7 @@ export default function Tasarim() {
             priority
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="grid w-full max-w-5xl grid-cols-1 gap-x-10  gap-y-4 py-8 px-8 md:grid-cols-2 md:py-20">
         <h2 className="text-4xl font-semibold text-primary">

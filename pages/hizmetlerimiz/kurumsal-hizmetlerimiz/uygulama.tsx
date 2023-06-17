@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, SEO } from "~/components/common";
+import { Layout, ResponsiveImage, SEO } from "~/components/common";
 import BireyselUygulamaBackgroundImage from "@public/bireysel-uygulama-background.jpg";
 import SertPeyzajImage from "@public/sert-peyzaj.jpg";
 import YumusakPeyzajImage from "@public/yumusak-peyzaj.jpg";
@@ -106,8 +106,9 @@ export default function Tasarim() {
           <h1 className="pb-8 text-3xl font-semibold">Kurumsal Uygulamalar</h1>
         </div>
       </div> */}
+      <ResponsiveImage imageUrl={BireyselUygulamaBackgroundImage.src} title1="Kurumsal Uygulama" title2="Servislerimiz" alt="Kurumsal Uygulama" />
 
-      <div
+      {/* <div
         className="w-full relative aspect-[2.2]
         "
       >
@@ -125,7 +126,7 @@ export default function Tasarim() {
             priority
           />
         </div>
-      </div>
+      </div> */}
       <div className="grid w-full max-w-5xl grid-cols-1 gap-x-10  gap-y-4 py-8 px-8 md:grid-cols-2 md:py-20">
         <h2 className="text-4xl font-semibold text-primary">
           Profesyonel ekibimiz, tecrübesi ve uzmanlığı ile her türlü peyzaj

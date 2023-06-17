@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, SEO } from "~/components/common";
+import { Layout, ResponsiveImage, SEO } from "~/components/common";
 import Link from "next/link";
 // import TestImage from "@public/kurumsal-page.jpg";
 import BireyselHizmetlerimizTasarimImage from "@public/bireysel-hizmetlerimiz-tasarim.jpg";
@@ -72,7 +72,9 @@ export default function Bireysel() {
           </h1>
         </div>
       </div> */}
-      <div
+      <ResponsiveImage imageUrl={BireyselHizmetlerimizBackgroundImage.src} title1="Bireysel Hizmetlerimiz" alt="Bireysel Tasarım" />
+
+      {/* <div
         className="w-full relative aspect-[2.2]
         "
       >
@@ -92,7 +94,7 @@ export default function Bireysel() {
             priority
           />
         </div>
-      </div>
+      </div> */}
       <div className="grid w-full max-w-5xl grid-cols-1 gap-x-10  gap-y-4 py-8 px-8 md:grid-cols-2 md:py-20">
         <h2 className="text-4xl font-semibold">
           Doğanın güzelliklerini evinize taşımak için sizinle çalışmaya hazırız!
