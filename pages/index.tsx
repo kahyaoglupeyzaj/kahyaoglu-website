@@ -2,7 +2,7 @@ import { getAllBlogPosts, getSettings } from 'lib/sanity.client'
 import { Post, Settings } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { BlogDisplay, Layout } from '~/components/common'
+import { BlogDisplay, Layout, SEO } from '~/components/common'
 import { By2Offset, CTABranded, Hero, SideWithImages, TestimonialSimpleCentered } from '~/components/homepage'
 
 // const PreviewIndexPage = lazy(() => import('components/PreviewIndexPage'))
@@ -40,14 +40,7 @@ export default function Home(props: PageProps) {
   // return <IndexPage posts={posts} settings={settings} />
   return (
     <>
-      <Head>
-        <title>Kahyaoğlu Peyzaj | En İyi Bahçeler Sizin de Hakkınız </title>
-        <meta
-          name="description"
-          content="Kahyaoglu Peyzaj olarak hem kaliteli hemde ekonomik çözümler üretiyoruz ve hayallerinize dokunuyoruz. İyi peyzajın insanların hayatlarını değiştirebileceğine inanıyoruz"
-        />
-        <link rel="icon" href="/favicon/favicon.ico" />
-      </Head>
+      <SEO title="Kahyaoğlu Peyzaj | En İyi Bahçeler Sizin de Hakkınız" description="Kahyaoglu Peyzaj olarak Bodrum ve çevre illerde hem kaliteli hemde ekonomik peyzaj çözümleri çözümler üretiyoruz ve hayallerinize dokunuyoruz." />
 
       <Hero />
       <SideWithImages />
