@@ -17,6 +17,8 @@ import {
   Tags,
   Category,
   kvkkQuery,
+  blogSlugsSiteMapQuery,
+  SiteMap,
 } from 'lib/sanity.queries'
 import { createClient } from 'next-sanity'
 
@@ -84,6 +86,20 @@ export async function getAllBlogPostsSlugs(): Promise<Pick<Post, 'slug'>[]> {
   }
   return []
 }
+
+
+
+export async function getAllBlogPostsSiteMapSlugs(): Promise<SiteMap[]> {
+  if (client) {
+    return (
+      (await client.fetch(blogSlugsSiteMapQuery, {
+        next: { revalidate: revalitateSeconds },
+      })) || []
+    )
+  }
+  return []
+}
+
 
 export async function getAllBlogPosts(): Promise<Post[]> {
   if (client) {

@@ -30,8 +30,20 @@ export const blogPostQuery = groq`
   ${blogFields}
 }`
 
+// export const blogSlugsQuery = groq`
+// *[_type == "blog-post" && defined(slug.current)]{
+//   _updatedAt,
+//     slug
+// }
+// `
 export const blogSlugsQuery = groq`
 *[_type == "blog-post" && defined(slug.current)][].slug.current
+`
+export const blogSlugsSiteMapQuery = groq`
+*[_type == "blog-post"]{
+  "updateTime": _updatedAt,
+  "slug": slug.current
+}
 `
 
 export const settingsQuery = groq`*[_type == "settings"][0]`
@@ -121,6 +133,11 @@ export const kvkkQuery = groq`
 export interface Author {
   name?: string
   picture?: any
+}
+
+export interface SiteMap {
+  updateTime?: string
+  slug?: string
 }
 
 export interface Post {
