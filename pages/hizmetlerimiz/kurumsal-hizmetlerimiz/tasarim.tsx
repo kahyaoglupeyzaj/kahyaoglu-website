@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, ResponsiveImage, SEO } from "~/components/common";
+import { Layout, OptimizedImages, ResponsiveImage, SEO } from "~/components/common";
 
 import KurumsalTasarimBackgroundImage from "@public/kurumsal-tasarim-background.jpg";
 import tasarim_image from "@public/3d-tasarim.jpg";
@@ -10,6 +10,7 @@ import ic_mekan_payzaj_tasarim_image from "@public/ic-mekan-peyzaj-tasarim.jpg";
 import yumusak_peyzaj_tasarim_image from "@public/yumusak-peyzaj-tasarim.jpg";
 import DisMekanAydinlatmaImage from "@public/bahce-aydinlatma.jpg";
 import Image from "next/image";
+import { CTABranded } from "~/components/homepage";
 
 const tasarimlar = [
   {
@@ -126,19 +127,12 @@ export default function Tasarim() {
       </div>
       <div className=" mt-4  grid w-full max-w-5xl grid-cols-3 gap-4 px-8 md:grid-cols-4">
         {tasarimlar.map((tasarim) => (
-          <div className="text-center " key={tasarim.id}>
-            <Image
-              className="aspect-square rounded-2xl object-cover
-                            
-                            "
-              src={tasarim.image}
-              alt={tasarim.name}
-              width={tasarim.width}
-              height={tasarim.height}
-            ></Image>
-            <span className="text-lg font-medium">{tasarim.name}</span>
-          </div>
+          <OptimizedImages image={tasarim.image} text={tasarim.name} id={tasarim.id} />
         ))}
+      </div>
+      <div className="w-full pt-20">
+
+        <CTABranded />
       </div>
     </div>
   );

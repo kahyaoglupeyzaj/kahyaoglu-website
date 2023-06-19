@@ -1,11 +1,12 @@
 import React from "react";
-import { Layout, ResponsiveImage, SEO } from "~/components/common";
+import { Layout, OptimizedImages, ResponsiveImage, SEO } from "~/components/common";
 import Link from "next/link";
 // import TestImage from "@public/kurumsal-page.jpg";
 import BireyselHizmetlerimizTasarimImage from "@public/bireysel-hizmetlerimiz-tasarim.jpg";
 import BireyselHizmetlerimizUygulamaImage from "@public/bireysel-hizmetlerimiz-uygulama.jpg";
 import BireyselHizmetlerimizBackgroundImage from "@public/bireysel-hizmetlerimiz-background.jpg";
 import Image from "next/image";
+import { CTABranded } from "~/components/homepage";
 
 const tasarimlar = [
   {
@@ -115,20 +116,13 @@ export default function Bireysel() {
             href={tasarim.href}
             className="transition-all hover:scale-105"
           >
-            <div className="text-center ">
-              <Image
-                className="aspect-square rounded-2xl object-cover
-                            
-                            "
-                src={tasarim.image}
-                alt={tasarim.name}
-                width={tasarim.width}
-                height={tasarim.height}
-              ></Image>
-              <span className="text-lg font-medium">{tasarim.name}</span>
-            </div>
+            <OptimizedImages image={tasarim.image} text={tasarim.name} id={tasarim.id} />
           </Link>
         ))}
+      </div>
+      <div className="w-full pt-20">
+
+        <CTABranded />
       </div>
     </div>
   );

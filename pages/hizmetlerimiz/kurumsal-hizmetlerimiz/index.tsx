@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, ResponsiveImage, SEO } from "~/components/common";
+import { Layout, OptimizedImages, ResponsiveImage, SEO } from "~/components/common";
 import Link from "next/link";
 
 import KurumsalHizmetlerimizBackgroundImage from "@public/kurumsal-hizmetlerimiz-background.jpg";
@@ -10,6 +10,7 @@ import KurumsalHizmetlerimizBakimImage from "@public/kurumsal-hizmetlerimiz-baki
 // import sulama_sistemi_projelendirme_image from "@public/sulama_sistemi_projelendirme.jpg";
 // import yumusak_peyzaj_tasarim_image from "@public/yumusak-peyzaj-tasarim.jpg";
 import Image from "next/image";
+import { CTABranded } from "~/components/homepage";
 
 const tasarimlar = [
   {
@@ -125,7 +126,8 @@ export default function Bireysel() {
             href={tasarim.href}
             className="transition-all hover:scale-105"
           >
-            <div className="text-center ">
+            <OptimizedImages image={tasarim.image} text={tasarim.name} id={tasarim.id} />
+            {/* <div className="text-center ">
               <Image
                 className="aspect-square rounded-2xl object-cover object-center
                             
@@ -136,9 +138,13 @@ export default function Bireysel() {
                 height={tasarim.height}
               ></Image>
               <span className="text-lg font-medium">{tasarim.name}</span>
-            </div>
+            </div> */}
           </Link>
         ))}
+      </div>
+      <div className="w-full pt-20">
+
+        <CTABranded />
       </div>
     </div>
   );
