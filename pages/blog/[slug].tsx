@@ -171,7 +171,7 @@ export default function Slug(props) {
             <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
               {post.titlePartOne}
             </span>
-            <span className="text-primary block pt-4 text-center text-lg font-semibold">
+            <span className="text-primary-dark block pt-4 text-center text-lg font-semibold">
               {post.titlePartTwo}
             </span>
           </h1>
