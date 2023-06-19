@@ -75,7 +75,7 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-          <p className="mt-8 text-center text-base text-gray-400">&copy; 2023 Kahyaoğlu. Bütün hakları saklıdır.</p>
+          <p className="mt-8 text-center text-base text-gray-600">&copy; 2023 Kahyaoğlu. Bütün hakları saklıdır.</p>
         </div>
 
 
