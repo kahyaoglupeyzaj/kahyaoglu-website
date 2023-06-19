@@ -37,6 +37,15 @@ export async function getServerSideProps({ res }) {
     `
   })
 
+
+  const basePages = baseUrls.map(url => {
+    return `
+      <loc>${baseUrl}${url}</loc >
+      <changefreq>daily</changefreq>
+      <priority>0.7</priority>
+    `
+  })
+
   const blogPost = [...posts]
 
 
@@ -51,7 +60,7 @@ export async function getServerSideProps({ res }) {
       })
       .join('')}
 
-      ${baseUrls
+      ${basePages
       .map(location => {
         return `<url>
                       ${location}
