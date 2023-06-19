@@ -40,7 +40,8 @@ export default function Home(props: PageProps) {
   // return <IndexPage posts={posts} settings={settings} />
   return (
     <>
-      <SEO title="Kahyaoğlu Peyzaj | En İyi Bahçeler Sizin de Hakkınız" description="Kahyaoglu Peyzaj olarak Bodrum ve çevre illerde hem kaliteli hemde ekonomik peyzaj çözümleri çözümler üretiyoruz ve hayallerinize dokunuyoruz." />
+      <SEO title="Kahyaoğlu Peyzaj | En İyi Bahçeler Sizin de Hakkınız"
+       description="Kahyaoglu Peyzaj olarak Bodrum ve çevre illerde hem kaliteli hemde ekonomik peyzaj çözümleri çözümler üretiyoruz ve hayallerinize dokunuyoruz." />
 
       <Hero />
       <SideWithImages />

@@ -97,7 +97,7 @@ export default function Bireysel() {
         </div>
       </div> */}
       <div className="grid w-full max-w-5xl grid-cols-1 gap-x-10  gap-y-4 py-8 px-8 md:grid-cols-2 md:py-20">
-        <h2 className="text-4xl font-semibold">
+        <h2 className=" text-4xl font-semibold text-primary ">
           Doğanın güzelliklerini evinize taşımak için sizinle çalışmaya hazırız!
         </h2>
         <div>
