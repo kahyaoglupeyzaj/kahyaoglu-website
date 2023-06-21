@@ -11,7 +11,6 @@ export async function getServerSideProps({ res }) {
 
   const baseUrls = [
     "/",
-    "/hakkimizda",
     "/referanslar",
     "/kurumsal",
     "/hizmetlerimiz",
