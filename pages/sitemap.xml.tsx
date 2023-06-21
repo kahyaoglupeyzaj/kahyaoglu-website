@@ -6,7 +6,7 @@ export default function SiteMap() {
 }
 
 export async function getServerSideProps({ res }) {
-  const baseUrl = `https://kahyaoglupeyzaj.com/`
+  const baseUrl = `https://kahyaoglupeyzaj.com`
   const blogPosts = await getAllBlogPostsSiteMapSlugs()
 
   const baseUrls = [
