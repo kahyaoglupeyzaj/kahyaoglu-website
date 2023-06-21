@@ -30,7 +30,7 @@ export async function getServerSideProps({ res }) {
 
 
     return `
-      <loc>${baseUrl}blog/${slug.slug}</loc >
+      <loc>${baseUrl}/blog/${slug.slug}</loc >
       <changefreq>daily</changefreq>
       <priority>0.7</priority>
       <lastmod>${slug.updateTime}</lastmod>
