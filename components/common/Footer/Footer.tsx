@@ -115,7 +115,7 @@ const Footer = () => {
                 </p>
               </Link>
 
-              <Link className='flex items-center' href="https://www.google.com/search?q=kahyaoglu+peyzaj&rlz=1C1GCEU_trTR1014TR1014&oq=kahyaoglu+peyzaj&aqs=chrome.0.69i59j0i22i30j69i60l3.3989j0j4&sourceid=chrome&ie=UTF-8#">
+              <Link className='flex items-center' href="https://goo.gl/maps/buVY4W3vwSGfZWLPA">
                 <MapIcon className="h-6 w-6 text-gray-400 mt-1 flex-shrink-0" aria-hidden="true" />
                 <p className="mt-1 pl-1 text-base text-gray-500 hover:text-gray-900">
                   Gölköy mahallesi, Atatürk Cd. no:6/A, 48400 Bodrum
