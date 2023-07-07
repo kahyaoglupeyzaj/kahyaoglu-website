@@ -33,6 +33,7 @@ const processEnv = {
   GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
   GOOGLE_SHEET_ID: process.env.GOOGLE_SHEET_ID,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+  NEXT_PUBLIC_GOOGLE_MAPS_API_KEY:process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
 };
 
 // Don't touch the part below

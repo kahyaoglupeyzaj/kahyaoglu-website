@@ -11,10 +11,13 @@ export default function BlogDisplay({
   posts: Post[]
   blogMore: Boolean
 }) {
+
+  const postsList = blogMore ? posts.slice(0, 3) : posts
+
   return (
     <>
       <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-        {posts.map((post) => {
+        {postsList.map((post) => {
           const formattedDate = new Date(post.date + '').toLocaleDateString(
             'en-US',
             {
