@@ -1,28 +1,36 @@
-import Image from "next/image";
-import { Layout, SEO } from "~/components/common";
-import KurumsalImage from "@public/kurumsal-page.jpg";
-import { BoltIcon, GlobeAltIcon, ScaleIcon } from "@heroicons/react/24/outline";
+import Image from 'next/image'
+import { Layout, SEO } from '~/components/common'
+import KurumsalImage from '@public/kurumsal-page.jpg'
+import {
+  BoltIcon,
+  ChatBubbleBottomCenterIcon,
+  ChatBubbleBottomCenterTextIcon,
+  GlobeAltIcon,
+  ScaleIcon,
+  ShieldCheckIcon,
+  UserGroupIcon,
+} from '@heroicons/react/24/outline'
 
 const features = [
   {
-    name: "GÜVEN",
+    name: 'GÜVEN',
     description:
-      "Güven bilgimiz, tecrübemiz, iş yapış şeklimiz, kurumsal değerlere ve ilkelere olan bağlılığımız ile tüm paydaşlarımız açısından “güven” oluştururuz. Verdiğimiz taahhütleri zamanında yerine getirir, her zaman her konuda güven verici profesyonel yaklaşımlar sergileriz..",
-    icon: GlobeAltIcon,
+      'Güven, bilgi birikimimiz, geniş tecrübemiz, etkin iş yapış şeklimiz ve kurumsal değerlere olan bağlılığımızla tüm paydaşlarımız için temel bir unsur oluşturuyoruz. Taahhütlerimizi zamanında yerine getiriyor, her durumda güven veren profesyonel yaklaşımlarımızla öne çıkıyoruz.',
+    icon: ShieldCheckIcon,
   },
   {
-    name: "MÜŞTERİ ODAKLILIK",
+    name: 'MÜŞTERİ ODAKLILIK',
     description:
-      "Müşterilerimizin beklenti ve ihtiyaçlarına önem veririz. “Koşulsuz müşteri memnuniyeti” ilkesi ile hareket ederek, taahhütlerimizi hızlı ve müşteri beklentilerinin üzerinde yerine getirir, konulara zamanında ve etkili çözümler üretiriz. Ürün, hizmet ve kalite standartlarımızı her durumda koruyarak, mutlak tutarlılık sağlayan ve uluslararası standartlara paralel yaklaşımlar sergileriz.",
-    icon: BoltIcon,
+      "Müşterilerimizin beklenti ve ihtiyaçlarını en üst düzeyde önemsiyoruz. 'Koşulsuz müşteri memnuniyeti' ilkesiyle hareket ediyor, taahhütlerimizi hızlı ve müşteri beklentilerinin ötesinde yerine getiriyoruz. Zamanında ve etkili çözümler sunarak, müşterilerimize karşı sorumluluklarımızı yerine getiriyoruz.",
+    icon: UserGroupIcon,
   },
   {
-    name: "SAYGI",
+    name: 'SAYGI',
     description:
-      "Tüm paydaşlarımıza saygıyla yaklaşırız; paydaşlarımızı dinler, onların görüş ve fikirlerini önemseyerek dikkate alırız. İnsan haklarına, doğaya, çevreye, tüm yasal ve hukuki düzenlemelere saygı gösteririz; kamuoyunun da bilinçlenmesi adına bu çerçevedeki görevlerimizi tam olarak yerine getiririz.",
-    icon: ScaleIcon,
+      'Tüm paydaşlarımıza saygıyla yaklaşırız; onların sesini dinler, görüş ve fikirlerini değerli buluruz. İnsan haklarına, doğaya, çevreye ve tüm yasal düzenlemelere büyük önem veririz. Müşterilerimizin, çalışanlarımızın, toplumun ve doğanın haklarına saygı gösteririz. Sizin ve tüm paydaşlarımızın güvenini kazanmak için adanmış bir şekilde çalışıyoruz.',
+    icon: ChatBubbleBottomCenterTextIcon,
   },
-];
+]
 
 export default function Kurumsal() {
   return (
@@ -41,19 +49,20 @@ export default function Kurumsal() {
             height={KurumsalImage.height}
           ></Image>
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16">
-          <div className="mx-auto max-w-2xl lg:mr-0 lg:ml-auto lg:w-1/2 lg:max-w-none lg:pl-10">
+        <div className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
+          <div className="mx-auto max-w-2xl lg:ml-auto lg:mr-0 lg:w-1/2 lg:max-w-none lg:pl-10">
             <h2 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Güvenilir, Saygılı, Müşteri odaklı
             </h2>
             <p className="mt-6 text-lg text-gray-500">
-              KAHYAOĞLU PEYZAJ Fidancılık; peyzaj mimari ve kentsel tasarım
-              projeleri ve uygulamalarıyla alanında daima ilklerin öncüsü olup,
-              kaliteli ve şık mekanlar üretmeye, dün olduğu gibi bugün de devam
-              etmektedir. İleri teknolojiye sahip ekipmanları ve inovatif
-              ürünleriyle son trendleri takip edebilmek, en kaliteli hizmeti
-              alabilmek ve Kahyaoğlu Peyzaj farkını yaşayabilmek için lütfen
-              bizi ziyaret ediniz.
+              Kahyaoğlu Peyzaj fidancılık, peyzaj mimarisi ve kentsel tasarım
+              projelerinde daima öncü olup, kaliteli ve şık mekanlar yaratmaya
+              devam ediyor. Geçmişten bugüne, müşterilerimize eşsiz deneyimler
+              sunmayı sürdürüyoruz. İleri teknolojiye sahip ekipmanlarımız ve
+              yenilikçi ürünlerimiz sayesinde son trendleri yakından takip
+              ediyor, en üstün hizmeti sunuyoruz. Kahyaoğlu Peyzaj ile
+              yaşayabileceğiniz farkı deneyimlemek ve en kaliteli hizmeti almak
+              için sizi ziyaret etmeye davet ediyoruz.
             </p>
             <div className="mt-8 overflow-hidden">
               <dl className="-mx-8 -mt-8 flex flex-wrap">
@@ -62,7 +71,7 @@ export default function Kurumsal() {
                     Hizmet
                   </dt>
                   <dd className="order-1 text-2xl font-bold text-primary sm:text-3xl sm:tracking-tight">
-                    24/7
+                    7/24
                   </dd>
                 </div>
                 <div className="flex flex-col px-8 pt-8">
@@ -112,7 +121,7 @@ export default function Kurumsal() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-Kurumsal.Layout = Layout;
+Kurumsal.Layout = Layout

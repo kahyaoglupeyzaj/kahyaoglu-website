@@ -1,92 +1,97 @@
-import React from "react";
-import { Layout, OptimizedImages, ResponsiveImage, SEO } from "~/components/common";
+import React from 'react'
+import {
+  Layout,
+  OptimizedImages,
+  ResponsiveImage,
+  SEO,
+} from '~/components/common'
 
-import BireyselUygulamaBackgroundImage from "@public/bireysel-uygulama-background.jpg";
-import SertPeyzajImage from "@public/sert-peyzaj.jpg";
-import YumusakPeyzajImage from "@public/yumusak-peyzaj.jpg";
-import CimSerimiImage from "@public/cim-serimi.jpg";
-import AdimTasiImage from "@public/adim-tasi.jpg";
-import DogalTasImage from "@public/dogal-tas.jpg";
-import DrenajImage from "@public/drenaj.jpg";
-import SulamaSistemiImage from "@public/sulama-sistemi.jpg";
-import BetonImage from "@public/beton.jpg";
-import BegonitAyracImage from "@public/begonit-ayrac.jpg";
-import BitkilendirmeImage from "@public/bitkilendirme.jpg";
-import Image from "next/image";
-import { CTABranded } from "~/components/homepage";
+import BireyselUygulamaBackgroundImage from '@public/bireysel-uygulama-background.jpg'
+import SertPeyzajImage from '@public/sert-peyzaj.jpg'
+import YumusakPeyzajImage from '@public/yumusak-peyzaj.jpg'
+import CimSerimiImage from '@public/cim-serimi.jpg'
+import AdimTasiImage from '@public/adim-tasi.jpeg'
+import DogalTasImage from '@public/dogal-tas.jpg'
+import DrenajImage from '@public/drenaj.jpg'
+import SulamaSistemiImage from '@public/sulama-sistemi.jpeg'
+import BetonImage from '@public/beton.jpg'
+import BegonitAyracImage from '@public/begonit-ayrac.jpg'
+import BitkilendirmeImage from '@public/bitkilendirme.jpg'
+import Image from 'next/image'
+import { CTABranded } from '~/components/homepage'
 
 const tasarimlar = [
   {
     id: 1,
-    name: "Sert Peyzaj",
+    name: 'Sert Peyzaj',
     image: SertPeyzajImage.src,
     width: SertPeyzajImage.width,
     height: SertPeyzajImage.height,
   },
   {
     id: 2,
-    name: "Yumuşak Peyzaj",
+    name: 'Yumuşak Peyzaj',
     image: YumusakPeyzajImage.src,
     width: YumusakPeyzajImage.width,
     height: YumusakPeyzajImage.height,
   },
   {
     id: 3,
-    name: "Çim Serimi",
+    name: 'Çim Serimi',
     image: CimSerimiImage.src,
     width: CimSerimiImage.width,
     height: CimSerimiImage.height,
   },
   {
     id: 4,
-    name: "Bitkilendirme",
+    name: 'Bitkilendirme',
     image: BitkilendirmeImage.src,
     width: BitkilendirmeImage.width,
     height: BitkilendirmeImage.height,
   },
   {
     id: 5,
-    name: "Sulama Sistemi Uygulaması",
+    name: 'Sulama Sistemi Uygulaması',
     image: SulamaSistemiImage.src,
     width: SulamaSistemiImage.width,
     height: SulamaSistemiImage.height,
   },
   {
     id: 6,
-    name: "Beton Uygulama",
+    name: 'Beton Uygulama',
     image: BetonImage.src,
     width: BetonImage.width,
     height: BetonImage.height,
   },
   {
     id: 7,
-    name: "Drenaj Uygulama",
+    name: 'Drenaj Uygulama',
     image: DrenajImage.src,
     width: DrenajImage.width,
     height: DrenajImage.height,
   },
   {
     id: 8,
-    name: "Adım Taşı Uygulama",
+    name: 'Adım Taşı Uygulama',
     image: AdimTasiImage.src,
     width: AdimTasiImage.width,
     height: AdimTasiImage.height,
   },
   {
     id: 9,
-    name: "Begonit Ayraç Uygulama",
+    name: 'Begonit Ayraç Uygulama',
     image: BegonitAyracImage.src,
     width: BegonitAyracImage.width,
     height: BegonitAyracImage.height,
   },
   {
     id: 10,
-    name: "Doğal Taş Uygulama",
+    name: 'Doğal Taş Uygulama',
     image: DogalTasImage.src,
     width: DogalTasImage.width,
     height: DogalTasImage.height,
   },
-];
+]
 
 export default function Tasarim() {
   return (
@@ -95,7 +100,12 @@ export default function Tasarim() {
         title="Uygulama - Bireysel Hizmetlerimiz"
         description="Kahyaoğlu Peyzaj Bireysel Hizmetlerimiz Uygulama"
       />
-      <ResponsiveImage imageUrl={BireyselUygulamaBackgroundImage.src} title1="Bireysel Uygulama" title2="Servislerimiz" alt="Bireysel Uygulama" />
+      <ResponsiveImage
+        imageUrl={BireyselUygulamaBackgroundImage.src}
+        title1="Bireysel Uygulama"
+        title2="Servislerimiz"
+        alt="Bireysel Uygulama"
+      />
 
       {/* <div
         className="w-full relative aspect-[2.2]
@@ -127,7 +137,7 @@ export default function Tasarim() {
           <h1 className="pb-8 text-3xl font-semibold">Bireysel Uygulamalar</h1>
         </div>
       </div> */}
-      <div className="grid w-full max-w-5xl grid-cols-1 gap-x-10  gap-y-4 py-8 px-8 md:grid-cols-2 md:py-20">
+      <div className="grid w-full max-w-5xl grid-cols-1 gap-x-10  gap-y-4 px-8 py-8 md:grid-cols-2 md:py-20">
         <h2 className="text-4xl font-semibold text-primary">
           Hayalinizdeki Bahçeye Ulaşmak İçin Gereken Son Adım !
         </h2>
@@ -151,7 +161,11 @@ export default function Tasarim() {
       </div>
       <div className=" mt-4  grid w-full max-w-5xl grid-cols-3 gap-4 px-8 md:grid-cols-4">
         {tasarimlar.map((tasarim) => (
-          <OptimizedImages image={tasarim.image} text={tasarim.name} id={tasarim.id} />
+          <OptimizedImages
+            image={tasarim.image}
+            text={tasarim.name}
+            id={tasarim.id}
+          />
           // <div className="text-center " key={tasarim.id}>
           //   <div className="relative aspect-square">
           //     <Image
@@ -170,11 +184,10 @@ export default function Tasarim() {
         ))}
       </div>
       <div className="w-full pt-20">
-
         <CTABranded />
       </div>
     </div>
-  );
+  )
 }
 
-Tasarim.Layout = Layout;
+Tasarim.Layout = Layout

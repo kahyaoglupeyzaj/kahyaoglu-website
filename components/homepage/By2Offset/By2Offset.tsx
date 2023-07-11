@@ -1,44 +1,47 @@
 /* This example requires Tailwind CSS v2.0+ */
 import {
+  BanknotesIcon,
   BoltIcon,
+  CalendarDaysIcon,
   EnvelopeIcon,
   GlobeAltIcon,
+  HandRaisedIcon,
   ScaleIcon,
-} from "@heroicons/react/24/outline";
+} from '@heroicons/react/24/outline'
 
 const features = [
   {
-    name: "Sürpriz fiyatlar yok",
+    name: 'Sürpriz fiyatlar yok',
     description:
-      "En başından detaylı bir planlama yapıyor ve size fiyat garantili bir teklif veriyoruz. Sürpriz ek fiyatlar ile karşılaşmıyorsunuz.",
-    icon: GlobeAltIcon,
+      'En başından detaylı bir planlama yapıyor ve size fiyat garantili bir teklif veriyoruz. Sürpriz ek fiyatlar ile karşılaşmıyorsunuz.',
+    icon: HandRaisedIcon,
   },
   {
-    name: "Vaktinde teslim",
+    name: 'Vaktinde teslim',
     description:
-      "Takvimimize uyuyor, size söz verdiğimiz gün bahçenizi teslim ediyoruz.",
-    icon: ScaleIcon,
+      'Takvimimize uyuyor, size söz verdiğimiz gün bahçenizi teslim ediyoruz.',
+    icon: CalendarDaysIcon,
   },
   {
-    name: "Uzman Ekip",
+    name: 'Uzman Ekip',
     description:
-      "İşinde uzman tecrübeli kadromuz bahçeniz için en doğru seçim.",
+      'İşinde uzman ve deneyimli kadromuz ile bahçenizi en güzel hale getiriyoruz.',
     icon: BoltIcon,
   },
   {
-    name: "Uygun Fiyatlar",
+    name: 'Uygun Fiyatlar',
     description:
-      "Yüksek kaliteyi en uygun fiyata alabilmek için bizden teklif almayı unutmayın. ",
-    icon: EnvelopeIcon,
+      'Yüksek kaliteyi en uygun fiyata alabilmek için bizden teklif almayı unutmayın. ',
+    icon: BanknotesIcon,
   },
-];
+]
 
 export default function By2Offset() {
   return (
     <div className="overflow-hidden ">
-      <div className="relative mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <svg
-          className="absolute top-0 left-full -translate-x-1/2 -translate-y-3/4 transform lg:left-auto lg:right-full lg:translate-x-2/3 lg:translate-y-1/4"
+          className="absolute left-full top-0 -translate-x-1/2 -translate-y-3/4 transform lg:left-auto lg:right-full lg:translate-x-2/3 lg:translate-y-1/4"
           width={404}
           height={784}
           fill="none"
@@ -97,5 +100,5 @@ export default function By2Offset() {
         </div>
       </div>
     </div>
-  );
+  )
 }

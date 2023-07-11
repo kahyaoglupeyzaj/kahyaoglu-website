@@ -1,59 +1,64 @@
-import React from "react";
-import { Layout, OptimizedImages, ResponsiveImage, SEO } from "~/components/common";
-import TestImage from "@public/kurumsal-page.jpg";
-import BireyselTasarimBackgroundImage from "@public/bireysel-tasarim-background.jpg";
-import tasarim_image from "@public/3d-tasarim.jpg";
-import bireysel_tasarim_image from "@public/bireysel-tasarim.jpg";
-import sert_peyzaj_tasarim_image from "@public/sert-peyzaj-tasarim.jpg";
-import sulama_sistemi_projelendirme_image from "@public/sulama_sistemi_projelendirme.jpg";
-import ic_mekan_payzaj_tasarim_image from "@public/ic-mekan-peyzaj-tasarim.jpg";
-import yumusak_peyzaj_tasarim_image from "@public/yumusak-peyzaj-tasarim.jpg";
-import Image from "next/image";
+import React from 'react'
+import {
+  Layout,
+  OptimizedImages,
+  ResponsiveImage,
+  SEO,
+} from '~/components/common'
+import TestImage from '@public/kurumsal-page.jpg'
+import BireyselTasarimBackgroundImage from '@public/bireysel-tasarim-background.jpg'
+import tasarim_image from '@public/3d-tasarim.jpg'
+import bireysel_tasarim_image from '@public/bireysel-tasarim.jpg'
+import sert_peyzaj_tasarim_image from '@public/sert-peyzaj-tasarim.jpg'
+import sulama_sistemi_projelendirme_image from '@public/sulama_sistemi_projelendirme.jpg'
+import ic_mekan_payzaj_tasarim_image from '@public/ic-mekan-peyzaj-tasarim.jpg'
+import yumusak_peyzaj_tasarim_image from '@public/yumusak-peyzaj-tasarim.jpg'
+import Image from 'next/image'
 import { CTABranded } from '~/components/homepage'
 const tasarimlar = [
   {
     id: 1,
-    name: "Peyzaj Proje Tasarım",
+    name: 'Peyzaj Proje Tasarım',
     image: bireysel_tasarim_image.src,
     width: bireysel_tasarim_image.width,
     height: bireysel_tasarim_image.height,
   },
   {
     id: 2,
-    name: "3 Boyutlu Tasarım",
+    name: '3 Boyutlu Model Tasarım',
     image: tasarim_image.src,
     width: tasarim_image.width,
     height: tasarim_image.height,
   },
   {
     id: 3,
-    name: "İç Mekan Peyzaj Tasarım",
+    name: 'İç Mekan Peyzaj Tasarım',
     image: ic_mekan_payzaj_tasarim_image.src,
     width: TestImage.width,
     height: TestImage.height,
   },
   {
     id: 4,
-    name: "Sert Peyzaj Tasarım",
+    name: 'Sert Peyzaj Tasarım',
     image: sert_peyzaj_tasarim_image.src,
     width: sert_peyzaj_tasarim_image.width,
     height: sert_peyzaj_tasarim_image.height,
   },
   {
     id: 5,
-    name: "Yumuşak Peyzaj Tasarım",
+    name: 'Yumuşak Peyzaj Tasarım',
     image: yumusak_peyzaj_tasarim_image.src,
     width: yumusak_peyzaj_tasarim_image.width,
     height: yumusak_peyzaj_tasarim_image.height,
   },
   {
     id: 6,
-    name: "Sulama Sistemi Projelendirme",
+    name: 'Sulama Sistemi Projelendirme',
     image: sulama_sistemi_projelendirme_image.src,
     width: sulama_sistemi_projelendirme_image.width,
     height: sulama_sistemi_projelendirme_image.height,
   },
-];
+]
 
 export default function Tasarim() {
   return (
@@ -74,7 +79,12 @@ export default function Tasarim() {
           <h1 className="pb-8 text-3xl font-semibold">Bireysel Tasarım</h1>
         </div>
       </div> */}
-      <ResponsiveImage imageUrl={BireyselTasarimBackgroundImage.src} title1="Bireysel Tasarım" title2="Servislerimiz" alt="Bireysel Tasarım" />
+      <ResponsiveImage
+        imageUrl={BireyselTasarimBackgroundImage.src}
+        title1="Bireysel Tasarım"
+        title2="Servislerimiz"
+        alt="Bireysel Tasarım"
+      />
 
       {/* <div
         className="w-full relative aspect-[2.2]
@@ -95,7 +105,7 @@ export default function Tasarim() {
           />
         </div>
       </div> */}
-      <div className=" grid w-full max-w-5xl grid-cols-1 gap-x-10 gap-y-4  py-8 px-8 text-primary md:grid-cols-2 md:py-20">
+      <div className=" grid w-full max-w-5xl grid-cols-1 gap-x-10 gap-y-4  px-8 py-8 text-primary md:grid-cols-2 md:py-20">
         <h2 className="text-4xl font-semibold">
           Doğanın güzelliklerini evinize taşımak için sizinle çalışmaya hazırız!
         </h2>
@@ -118,15 +128,18 @@ export default function Tasarim() {
       </div>
       <div className=" mt-4  grid w-full max-w-5xl grid-cols-3 gap-4 px-8 md:grid-cols-4">
         {tasarimlar.map((tasarim) => (
-          <OptimizedImages image={tasarim.image} text={tasarim.name} id={tasarim.id} />
+          <OptimizedImages
+            image={tasarim.image}
+            text={tasarim.name}
+            id={tasarim.id}
+          />
         ))}
       </div>
       <div className="w-full pt-20">
-
         <CTABranded />
       </div>
     </div>
-  );
+  )
 }
 
-Tasarim.Layout = Layout;
+Tasarim.Layout = Layout

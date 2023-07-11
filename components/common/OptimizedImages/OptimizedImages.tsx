@@ -2,10 +2,17 @@ import React from 'react'
 
 import Image from 'next/image'
 
-export default function OptimizedImages({ id, image, text }: { id: number, image: string, text: string }) {
+export default function OptimizedImages({
+  id,
+  image,
+  text,
+}: {
+  id: number
+  image: string
+  text: string
+}) {
   return (
-
-    <div className="text-center w-full" key={id}>
+    <div className="w-full text-center" key={id}>
       <div className="relative aspect-square">
         <Image
           className=" rounded-2xl object-cover
@@ -20,6 +27,5 @@ export default function OptimizedImages({ id, image, text }: { id: number, image
       </div>
       <span className="text-lg font-medium">{text}</span>
     </div>
-
   )
 }

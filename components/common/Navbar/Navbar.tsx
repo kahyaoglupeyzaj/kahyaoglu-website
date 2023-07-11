@@ -1,32 +1,41 @@
-import Link from "next/link";
-import NavbarRoot from "./NavbarRoot";
-import { Logo } from "@components/ui";
-import { Popover, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import Link from 'next/link'
+import NavbarRoot from './NavbarRoot'
+import { Logo } from '@components/ui'
+import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
 
 import {
+  BriefcaseIcon,
   ChartBarIcon,
+  ChatBubbleBottomCenterTextIcon,
   CursorArrowRaysIcon,
+  HomeIcon,
+  IdentificationIcon,
+  PaintBrushIcon,
+  PencilIcon,
+  PhoneIcon,
   // PhoneIcon,
   // PlayIcon,
   ShieldCheckIcon,
   Squares2X2Icon,
-} from "@heroicons/react/24/outline";
+  WrenchIcon,
+  WrenchScrewdriverIcon,
+} from '@heroicons/react/24/outline'
 
 const solutions = [
   {
-    name: "Tasarım",
+    name: 'Tasarım',
     description:
-      "Bireysel Konutunuzun peyzajını zevkinize ve kullanım amacına göre tasarlıyoruz.",
-    href: "/hizmetlerimiz/bireysel-hizmetlerimiz/tasarim",
-    icon: ChartBarIcon,
+      'Evinizin peyzajını zevkinize ve kullanım amacına göre tasarlıyoruz.',
+    href: '/hizmetlerimiz/bireysel-hizmetlerimiz/tasarim',
+    icon: PaintBrushIcon,
   },
   {
-    name: "Uygulama",
+    name: 'Uygulama',
     description:
-      "Evinizin bahçesini düzenliyor, estetik ve fonksiyonel açıdan en uygun uygulama işlemlerini gerçekleştiriyoruz.",
-    href: "/hizmetlerimiz/bireysel-hizmetlerimiz/uygulama",
-    icon: CursorArrowRaysIcon,
+      'Evinizin bahçesini düzenliyor, estetik ve fonksiyonel açıdan en uygun uygulama işlemlerini gerçekleştiriyoruz.',
+    href: '/hizmetlerimiz/bireysel-hizmetlerimiz/uygulama',
+    icon: WrenchScrewdriverIcon,
   },
   // {
   //   name: 'Bakım',
@@ -34,37 +43,37 @@ const solutions = [
   //   href: '/hizmetlerimiz/bireysel-hizmetlerimiz/bakim',
   //   icon: Squares2X2Icon,
   // },
-];
+]
 const kurumsalMenu = [
   {
-    name: "Tasarım",
+    name: 'Tasarım',
     description:
-      "Müşterilerirniz için en göz alıcı peyzajı profesyonel değerlendirmeler ile tasarlıyoruz.",
-    href: "/hizmetlerimiz/kurumsal-hizmetlerimiz/tasarim",
-    icon: ChartBarIcon,
+      'Müşterilerirniz için en göz alıcı peyzajı profesyonel değerlendirmeler ile tasarlıyoruz.',
+    href: '/hizmetlerimiz/kurumsal-hizmetlerimiz/tasarim',
+    icon: PaintBrushIcon,
   },
   {
-    name: "Uygulama",
+    name: 'Uygulama',
     description:
       "İşletmeniz için A'dan Z'ye kurumsal peyzaj uygulama hizmetleri sunuyoruz.",
-    href: "/hizmetlerimiz/kurumsal-hizmetlerimiz/uygulama",
-    icon: CursorArrowRaysIcon,
+    href: '/hizmetlerimiz/kurumsal-hizmetlerimiz/uygulama',
+    icon: WrenchScrewdriverIcon,
   },
   {
-    name: "Bakım",
+    name: 'Bakım',
     description:
-      "İşletmenizin sahip olduğu tüm açık alanların profesyonel bir şekilde düzenli bakımını yapıyoruz.",
-    href: "/hizmetlerimiz/kurumsal-hizmetlerimiz/bakim",
-    icon: Squares2X2Icon,
+      'İşletmenizin sahip olduğu tüm açık alanların profesyonel bir şekilde düzenli bakımını yapıyoruz.',
+    href: '/hizmetlerimiz/kurumsal-hizmetlerimiz/bakim',
+    icon: WrenchIcon,
   },
-];
+]
 
 import {
   Bars3Icon,
   // BookmarkSquareIcon,
   XMarkIcon,
-} from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+} from '@heroicons/react/24/outline'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 import {
   // BriefcaseIcon,
@@ -75,39 +84,39 @@ import {
   // NewspaperIcon,
 
   // UserGroupIcon,
-} from "@heroicons/react/24/outline";
+} from '@heroicons/react/24/outline'
 
 interface Link {
-  href: string;
-  label: string;
+  href: string
+  label: string
 }
 
 const Navbar = () => {
   const features = [
     {
-      name: "Kurumsal",
-      href: "/kurumsal",
+      name: 'Hakkımızda',
+      href: '/kurumsal',
       description:
-        "Get a better understanding of where your traffic is coming from.",
-      icon: ChartBarIcon,
+        'Get a better understanding of where your traffic is coming from.',
+      icon: IdentificationIcon,
     },
     {
-      name: "Blog",
-      href: "/blog",
-      description: "Speak directly to your customers in a more meaningful way.",
-      icon: CursorArrowRaysIcon,
+      name: 'Blog',
+      href: '/blog',
+      description: 'Speak directly to your customers in a more meaningful way.',
+      icon: ChatBubbleBottomCenterTextIcon,
     },
     {
-      name: "İletişim",
-      href: "/iletisim",
+      name: 'İletişim',
+      href: '/iletisim',
       description: "Your customers' data will be safe and secure.",
-      icon: ShieldCheckIcon,
+      icon: PhoneIcon,
     },
     {
-      name: "Referanslarımız",
-      href: "/referanslar",
+      name: 'Referanslarımız',
+      href: '/referanslar',
       description: "Connect with third-party tools that you're already using.",
-      icon: Squares2X2Icon,
+      icon: BriefcaseIcon,
     },
     // {
     //   name: 'Bireysel Hizmerlerimiz',
@@ -121,14 +130,14 @@ const Navbar = () => {
     //   description: 'Build strategic funnels that will drive your customers to convert',
     //   icon: ArrowPathIcon,
     // },
-  ];
+  ]
 
   // type ClassNameProps = {
   //   className?: string
   // }
 
   function classNames(...classes: (string | undefined)[]) {
-    return classes.filter(Boolean).join(" ");
+    return classes.filter(Boolean).join(' ')
   }
 
   return (
@@ -157,15 +166,15 @@ const Navbar = () => {
                   <>
                     <Popover.Button
                       className={classNames(
-                        open ? "text-gray-900" : "text-gray-500",
-                        "group inline-flex items-center rounded-md bg-background-secondary font-medium text-base hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                        open ? 'text-gray-900' : 'text-gray-500',
+                        'group inline-flex items-center rounded-md bg-background-secondary font-medium text-base hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
                       )}
                     >
                       <span>Bireysel Hizmetlerimiz</span>
                       <ChevronDownIcon
                         className={classNames(
-                          open ? "text-gray-600" : "text-gray-400",
-                          "ml-2 h-5 w-5 group-hover:text-gray-500"
+                          open ? 'text-gray-600' : 'text-gray-400',
+                          'ml-2 h-5 w-5 group-hover:text-gray-500'
                         )}
                         aria-hidden="true"
                       />
@@ -228,15 +237,15 @@ const Navbar = () => {
                   <>
                     <Popover.Button
                       className={classNames(
-                        open ? "text-gray-900" : "text-gray-500",
-                        "group inline-flex items-center rounded-md bg-background-secondary font-medium text-base hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                        open ? 'text-gray-900' : 'text-gray-500',
+                        'group inline-flex items-center rounded-md bg-background-secondary font-medium text-base hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
                       )}
                     >
                       <span>Kurumsal Hizmetlerimiz</span>
                       <ChevronDownIcon
                         className={classNames(
-                          open ? "text-gray-600" : "text-gray-400",
-                          "ml-2 h-5 w-5 group-hover:text-gray-500"
+                          open ? 'text-gray-600' : 'text-gray-400',
+                          'ml-2 h-5 w-5 group-hover:text-gray-500'
                         )}
                         aria-hidden="true"
                       />
@@ -395,7 +404,7 @@ const Navbar = () => {
                 href="/kurumsal"
                 className="font-medium text-base text-gray-500 hover:text-gray-900"
               >
-                Kurumsal
+                Hakkımızda
               </Link>
               <Link
                 href="/blog"
@@ -433,7 +442,7 @@ const Navbar = () => {
           >
             {({ close }) => (
               <div className="divide-y-2 divide-gray-50 rounded-lg bg-background-secondary shadow-lg ring-1  ring-black ring-opacity-5">
-                <div className="px-5 pt-5 pb-6">
+                <div className="px-5 pb-6 pt-5">
                   <div className="flex items-center justify-between">
                     <div>
                       <Link href="/" onClick={() => close()}>
@@ -468,15 +477,15 @@ const Navbar = () => {
                     </nav>
                   </div>
                 </div>
-                <div className="space-y-6 py-6 px-5">
-                  <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+                <div className="space-y-6 px-5 py-6">
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                     <div className="flex flex-col gap-3">
                       <Link
                         href="/hizmetlerimiz/bireysel-hizmetlerimiz"
                         className="flex font-medium text-base text-gray-900 hover:text-gray-700"
                         onClick={() => close()}
                       >
-                        <BuildingOfficeIcon
+                        <HomeIcon
                           className="h-6 w-6 flex-shrink-0 text-primary"
                           aria-hidden="true"
                         />
@@ -525,7 +534,7 @@ const Navbar = () => {
         </Transition>
       </Popover>
     </NavbarRoot>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

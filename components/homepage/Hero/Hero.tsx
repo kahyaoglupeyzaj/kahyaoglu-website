@@ -1,23 +1,22 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 // import HeroPhoto from "@public/home-photo1.jpg";
-import Link from "next/link";
-import HeroPhoto from "@public/home-photo1.jpg"
+import Link from 'next/link'
+import HeroPhoto from '@public/home-photo1.jpg'
 export default function Hero() {
-
   return (
     <main className="lg:relative">
-      <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left">
+      <div className="mx-auto w-full max-w-7xl pb-20 pt-16 text-center lg:py-48 lg:text-left">
         <div className="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-            <span className="block xl:inline">En İyi Bahçeler</span>{" "}
+            <span className="block xl:inline">En İyi Bahçeler</span>{' '}
             <br className="hidden xl:block"></br>
             <span className="block text-primary xl:inline">
               Sizin de Hakkınız
             </span>
           </h1>
           <p className="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-            Kahyaoglu Modern Peyzaj olarak hem kaliteli hem de ekonomik çözümler
+            Kahyaoğlu Peyzaj olarak hem kaliteli hem de ekonomik çözümler
             üretiyor ve sizi hayallerinizdeki bahçeye kavuşturuyoruz. Doğru
             peyzajın insanların hayatlarını değiştirebildiğine inanıyoruz
           </p>
@@ -25,7 +24,7 @@ export default function Hero() {
             <div className="rounded-md shadow">
               <Link
                 href="/iletisim"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 font-medium text-base text-white hover:bg-primary-dark md:py-4 md:px-14 md:text-lg"
+                className="flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 font-medium text-base text-white hover:bg-primary-dark md:px-14 md:py-4 md:text-lg"
               >
                 Randevu Oluştur
               </Link>
@@ -52,9 +51,8 @@ export default function Hero() {
           priority
           fill
           quality={70}
-
         />
       </div>
     </main>
-  );
+  )
 }

@@ -1,32 +1,32 @@
-import React, { useState } from "react";
-import { Layout, SEO } from "~/components/common";
-import TestImage from "@public/kurumsal-page.jpg";
-import Image from "next/image";
+import React, { useState } from 'react'
+import { Layout, SEO } from '~/components/common'
+import TestImage from '@public/kurumsal-page.jpg'
+import Image from 'next/image'
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion'
 
 //new sanity
 import { apiVersion, dataset, projectId, useCdn } from 'lib/sanity.api'
-import { getAllCategories, getAllReferanslar, getAllTags, getSettings } from 'lib/sanity.client'
+import {
+  getAllCategories,
+  getAllReferanslar,
+  getAllTags,
+  getSettings,
+} from 'lib/sanity.client'
 import { Category, Post, Settings, Tags } from 'lib/sanity.queries'
 import { GetServerSideProps, GetStaticProps } from 'next'
 import { groq } from 'next-sanity'
 import { createClient } from 'next-sanity'
 import { lazy } from 'react'
 
-
-
-
-import type { FC } from "react";
-import { urlForImage } from "~/lib/sanity.image";
-
-
+import type { FC } from 'react'
+import { urlForImage } from '~/lib/sanity.image'
 
 type MenuButtonProps = {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-};
+  active: boolean
+  onClick: () => void
+  children: React.ReactNode
+}
 
 interface ReferanslarProps {
   referans: Referanslar
@@ -37,7 +37,6 @@ interface ReferanslarProps {
   preview: boolean
   token: string | null
 }
-
 
 interface ReferanslarQuery {
   [key: string]: string
@@ -65,134 +64,151 @@ export const MenuButton: FC<MenuButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`${active
-        ? "bg-primary-dark text-white"
-        : "bg-primary text-white opacity-75 hover:bg-primary-dark"
-        } mr-2 rounded-md px-3 py-2 text-sm font-medium`}
+      className={`${
+        active
+          ? 'bg-primary-dark text-white'
+          : 'bg-primary text-white opacity-75 hover:bg-primary-dark'
+      } mr-2 rounded-md px-3 py-2 text-sm font-medium`}
     >
       {children}
     </button>
-  );
-};
+  )
+}
 type Referans = {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  tags: string[];
-};
+  id: string
+  title: string
+  description: string
+  image: string
+  category: string
+  tags: string[]
+}
 // const tags = ["Tasarım", "Uygulama", "Bakım"];
 
 export default function Referanslar(props: ReferanslarProps) {
-  const { referanslar, categories, tags: astag, settings, preview, token } = props
-  const tags = astag.map(tag => tag.tags);
+  const {
+    referanslar,
+    categories,
+    tags: astag,
+    settings,
+    preview,
+    token,
+  } = props
+  const tags = astag.map((tag) => tag.tags)
 
-  const [kurumsalActive, setKurumsalActive] = React.useState(false);
-  const [bireyselActive, setBireyselActive] = React.useState(false);
-  const [items, setItems] = React.useState(referanslar.map(referans => ({
-    id: referans._id,
-    title: referans.title,
-    description: referans.referans,
-    image: urlForImage(referans.coverImage.asset._ref).height(600).width(900).url(),
-    category: referans.categoryType.toLowerCase(),
-    tags: referans.tag,
-  })));
-  const [selectedTags, setSelectedTags] = React.useState<string[]>([]);
-  const [noResults, setNoResults] = React.useState(false);
-
-
-
-
-
-  const handleClickKurumsal = () => {
-    setKurumsalActive((x) => !x);
-  };
-  const handleClickBireysel = () => {
-    setBireyselActive((x) => !x);
-  };
-
-  const handleTags = (tag: string | null | undefined) => {
-    if (tag === null) return; // null or undefined check
-
-    if (selectedTags.includes(tag)) {
-      setSelectedTags((x) => x.filter((x) => x !== tag));
-      return;
-    }
-    setSelectedTags((x) => [...x, tag]);
-  };
-
-  React.useEffect(() => {
-    let filteredItems = referanslar.map(referans => ({
+  const [kurumsalActive, setKurumsalActive] = React.useState(false)
+  const [bireyselActive, setBireyselActive] = React.useState(false)
+  const [items, setItems] = React.useState(
+    referanslar.map((referans) => ({
       id: referans._id,
       title: referans.title,
       description: referans.referans,
-      image: urlForImage(referans.coverImage.asset._ref).height(600).width(900).url(),
+      image: urlForImage(referans.coverImage.asset._ref)
+        .height(600)
+        .width(900)
+        .url(),
       category: referans.categoryType.toLowerCase(),
       tags: referans.tag,
-    }));
+    }))
+  )
+  const [selectedTags, setSelectedTags] = React.useState<string[]>([])
+  const [noResults, setNoResults] = React.useState(false)
+
+  const handleClickKurumsal = () => {
+    setKurumsalActive((x) => !x)
+  }
+  const handleClickBireysel = () => {
+    setBireyselActive((x) => !x)
+  }
+
+  const handleTags = (tag: string | null | undefined) => {
+    if (tag === null) return // null or undefined check
+
+    if (selectedTags.includes(tag)) {
+      setSelectedTags((x) => x.filter((x) => x !== tag))
+      return
+    }
+    setSelectedTags((x) => [...x, tag])
+  }
+
+  React.useEffect(() => {
+    let filteredItems = referanslar.map((referans) => ({
+      id: referans._id,
+      title: referans.title,
+      description: referans.referans,
+      image: urlForImage(referans.coverImage.asset._ref)
+        .height(600)
+        .width(900)
+        .url(),
+      category: referans.categoryType.toLowerCase(),
+      tags: referans.tag,
+    }))
 
     if (kurumsalActive && !bireyselActive) {
       filteredItems = filteredItems.filter(
-        (item) => item.category === "kurumsal"
-      );
+        (item) => item.category === 'kurumsal'
+      )
     } else if (bireyselActive && !kurumsalActive) {
       filteredItems = filteredItems.filter(
-        (item) => item.category === "bireysel"
-      );
+        (item) => item.category === 'bireysel'
+      )
     } else if (kurumsalActive && bireyselActive) {
       // no filter applied since both categories are active
     }
 
     if (selectedTags.length > 0) {
       filteredItems = filteredItems.filter((item) => {
-        return selectedTags.some((tag) => item.tags?.includes(tag));
-      });
+        return selectedTags.some((tag) => item.tags?.includes(tag))
+      })
     }
 
-    setItems(filteredItems);
-  }, [kurumsalActive, bireyselActive, selectedTags]);
+    setItems(filteredItems)
+  }, [kurumsalActive, bireyselActive, selectedTags])
 
   React.useEffect(() => {
     if (items.length === 0) {
-      setNoResults(true);
+      setNoResults(true)
     } else {
-      setNoResults(false);
+      setNoResults(false)
     }
-  }, [items]);
+  }, [items])
 
   const resetFilters = () => {
-    setKurumsalActive(false);
-    setBireyselActive(false);
-    setSelectedTags([]);
-    setItems(referanslar.map(referans => ({
-      id: referans._id,
-      title: referans.title,
-      description: referans.referans,
-      image: urlForImage(referans.coverImage.asset._ref).height(40).width(40).url(),
-      category: referans.categoryType.toLowerCase(),
-      tags: referans.tag,
-    })));
-  };
+    setKurumsalActive(false)
+    setBireyselActive(false)
+    setSelectedTags([])
+    setItems(
+      referanslar.map((referans) => ({
+        id: referans._id,
+        title: referans.title,
+        description: referans.referans,
+        image: urlForImage(referans.coverImage.asset._ref)
+          .height(40)
+          .width(40)
+          .url(),
+        category: referans.categoryType.toLowerCase(),
+        tags: referans.tag,
+      }))
+    )
+  }
 
   //Animation
-  const [selectedItem, setSelectedItem] = useState<null | Referans>(null);
+  const [selectedItem, setSelectedItem] = useState<null | Referans>(null)
 
   const handleCardClick = (item: Referans) => {
-    setSelectedItem(item);
-  };
+    setSelectedItem(item)
+  }
   const handleCloseModal = () => {
-    setSelectedItem(null);
-  };
+    setSelectedItem(null)
+  }
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: { opacity: 1, scale: 1 },
     exit: { opacity: 0, scale: 0.9 },
-  };
+  }
 
   return (
-    <div className="relative w-full bg-background-primary pt-16 pb-20 lg:pt-24 lg:pb-28 ">
+    <div className="relative w-full bg-background-primary pb-20 pt-16 lg:pb-28 lg:pt-24 ">
       <SEO
         title="Referanslarımız"
         description={`Kahyaoğlu Peyzaj'ın Referans Projeleri`}
@@ -228,7 +244,7 @@ export default function Referanslar(props: ReferanslarProps) {
                 <div><code>{JSON.stringify(selectedTags, null, 2)}</code></div> */}
         <div className="flex items-center justify-center  gap-2 pt-4">
           {tags.map((tag) => {
-            const active = Boolean(selectedTags.find((x) => x === tag));
+            const active = Boolean(selectedTags.find((x) => x === tag))
             return (
               <MenuButton
                 key={tag}
@@ -237,44 +253,44 @@ export default function Referanslar(props: ReferanslarProps) {
               >
                 {tag}
               </MenuButton>
-            );
+            )
           })}
         </div>
         <p className="pt-2 text-center text-sm text-gray-700">
-          Filitrelemek için yukarıdaki butonlara tıklayın
+          Filtrelemek için yukarıdaki butonlara tıklayın
         </p>
         {noResults && (
           <div className="flex items-center justify-center">
             <div className="flex flex-col text-center">
               <span className="py-2 pt-8 font-medium text-red">
-                Aradığınız filterlerde referans bulunamadı
+                Aradığınız filtrelerde referans bulunamadı
               </span>
               <button
                 className="mr-2 rounded-md  bg-primary-dark px-3 py-2 text-sm font-medium text-white"
                 onClick={resetFilters}
               >
-                Filitreleri Sıfırla
+                Filtreleri Sıfırla
               </button>
             </div>
           </div>
         )}
-        <motion.ul className="mt-4  grid w-full grid-cols-2 md:grid-cols-4">
+        <motion.ul className="mt-4 grid w-full grid-cols-2 gap-4  px-8 md:grid-cols-4">
           {items.map((tasarim) => (
-            <li className="group relative text-center " key={tasarim.id}>
+            <li className=" relative   text-center" key={tasarim.id}>
               <motion.div
                 key={tasarim.id}
-                className="card relative aspect-square cursor-pointer rounded bg-background-primary shadow-lg"
+                className="card relative aspect-square cursor-pointer  bg-background-primary shadow-lg"
                 onClick={() => handleCardClick(tasarim)}
                 layoutId={tasarim.id}
               >
                 <Image
-                  className="aspect-square object-cover"
+                  className="aspect-square rounded-2xl object-cover"
                   src={tasarim.image}
                   alt={tasarim.title}
                   width={600}
                   height={600}
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 p-2 text-white transition-all duration-300 ease-out  group-hover:opacity-70">
+                <div className="absolute bottom-0 left-0 right-0 rounded-2xl bg-black bg-opacity-40 p-2 text-white transition-all duration-300 ease-out  group-hover:opacity-70">
                   <span className="text-lg font-medium">{tasarim.title}</span>
                 </div>
               </motion.div>
@@ -286,15 +302,15 @@ export default function Referanslar(props: ReferanslarProps) {
           {selectedItem && (
             <>
               <motion.div
-                className="fixed top-0 left-0 z-50 flex h-screen w-screen items-center justify-center bg-black bg-opacity-50"
+                className="fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-black bg-opacity-50"
                 onClick={handleCloseModal}
                 exit={{ opacity: 0, transition: { dItemuration: 0 } }}
                 variants={modalVariants}
               >
-                {" "}
+                {' '}
               </motion.div>
               <motion.div
-                className="modal-content fixed left-0 right-0 top-0  bottom-0 z-[100] mx-4 mt-[20vh] h-fit w-auto max-w-4xl  rounded bg-background-primary  p-4 shadow-lg md:mx-8 md:mt-[3vh] lg:mx-auto "
+                className="modal-content fixed bottom-0 left-0 right-0  top-0 z-[100] mx-4 mt-[20vh] h-fit w-auto max-w-4xl rounded-2xl bg-background-primary  p-4 shadow-lg md:mx-8 md:mt-[3vh] lg:mx-auto "
                 onClick={handleCloseModal}
                 initial="hidden"
                 animate="visible"
@@ -308,8 +324,7 @@ export default function Referanslar(props: ReferanslarProps) {
                   width={900}
                   height={600}
                   style={{
-                    maxHeight: "70vh",
-
+                    maxHeight: '70vh',
                   }}
                   className="mb-4 aspect-square rounded object-cover "
                 />
@@ -322,20 +337,14 @@ export default function Referanslar(props: ReferanslarProps) {
         </AnimatePresence>
       </div>
     </div>
-  );
+  )
 }
 
-Referanslar.Layout = Layout;
-
+Referanslar.Layout = Layout
 
 const client = projectId
   ? createClient({ projectId, dataset, apiVersion, useCdn })
   : null
-
-
-
-
-
 
 export const getStaticProps: GetStaticProps =
   // <
@@ -352,7 +361,6 @@ export const getStaticProps: GetStaticProps =
       getAllTags(),
       getAllCategories(),
     ])
-
 
     return {
       props: {

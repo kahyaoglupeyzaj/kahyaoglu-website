@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function TestimonialSimpleCentered() {
@@ -6,7 +6,7 @@ export default function TestimonialSimpleCentered() {
     <section className="overflow-hidden bg-background-primary py-12 md:py-20 lg:py-24">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <svg
-          className="absolute top-full right-full translate-x-1/3 -translate-y-1/4 transform lg:translate-x-1/2 xl:-translate-y-1/2"
+          className="absolute right-full top-full -translate-y-1/4 translate-x-1/3 transform lg:translate-x-1/2 xl:-translate-y-1/2"
           width={404}
           height={404}
           fill="none"
@@ -45,31 +45,23 @@ export default function TestimonialSimpleCentered() {
           <blockquote className="mt-10">
             <div className="mx-auto max-w-3xl text-center text-2xl font-medium leading-9 text-gray-900">
               <p>
-                &ldquo;Kahyaoğlu Peyzaj ile çalışmaya başladığımızdan
-                beri bahçemiz çok daha keyifli. Ailem ile vaktimizin çoğunu
-                bahçede geçiriyoruz. Özellikle Onur Beye teşekkür ederiz.&rdquo;
+                &ldquo;Kahyaoğlu Peyzaj ile çalışmaya başladığımızdan beri
+                bahçemiz çok daha keyifli. Ailem ile vaktimizin çoğunu bahçede
+                geçiriyoruz. Özellikle Hüseyin Bey'e teşekkür ederiz.&rdquo;
               </p>
             </div>
             <footer className="mt-8">
               <div className="md:flex md:items-center md:justify-center">
                 <div className="md:flex-shrink-0">
-                  <Image
-                    className="mx-auto h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    width={256}
-                    height={256}
-                    alt=""
-                  />
                   {/* <img
                     className="mx-auto h-10 w-10 rounded-full"
                     alt=""
                   /> */}
                 </div>
-                <div className="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
+                <div className="mt-3 text-center md:ml-4 md:mt-0 md:flex md:items-center">
                   <div className="font-medium text-base text-gray-900">
-                    Onur Kahyaoğlu
+                    Sami Yangın
                   </div>
-
                   <svg
                     className="mx-1 hidden h-5 w-5 text-primary md:block"
                     fill="currentColor"
@@ -77,9 +69,8 @@ export default function TestimonialSimpleCentered() {
                   >
                     <path d="M11 0h3L9 20H6l5-20z" />
                   </svg>
-
                   <div className="font-medium text-base text-gray-500">
-                    CEO, Kahyaoğlu Holding
+                    Yalıkavak Villa Peyzaj Projesi
                   </div>
                 </div>
               </div>
@@ -88,5 +79,5 @@ export default function TestimonialSimpleCentered() {
         </div>
       </div>
     </section>
-  );
+  )
 }

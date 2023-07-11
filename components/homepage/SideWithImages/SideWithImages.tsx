@@ -1,56 +1,61 @@
 /* This example requires Tailwind CSS v2.0+ */
 import {
+  BanknotesIcon,
   BoltIcon,
   ChatBubbleBottomCenterTextIcon,
   EnvelopeIcon,
   GlobeAltIcon,
   ScaleIcon,
-} from "@heroicons/react/24/outline";
+  ShieldCheckIcon,
+  WalletIcon,
+  WrenchIcon,
+  WrenchScrewdriverIcon,
+} from '@heroicons/react/24/outline'
 
-import Image from "next/image";
-import KurumsalImage from "@public/kurumsal-image.webp";
-import BireyselImage from "@public/bireysel-image.png";
-import Link from "next/link";
+import Image from 'next/image'
+import KurumsalImage from '@public/kurumsal-image.webp'
+import BireyselImage from '@public/bireysel-image.png'
+import Link from 'next/link'
 
 const transferFeatures = [
   {
     id: 1,
-    name: "Memnuniyet Garantisi",
+    name: 'Memnuniyet Garantisi',
     description:
-      "Yaptığımız bütün işleri sizinle beraber planlayıp sizin hayalinizdeki bahçeyi kavuşmanız için gerekeni yapıyoruz. Memnuniyetiniz bizim için 1. öncelik.",
-    icon: GlobeAltIcon,
+      'Yaptığımız bütün işleri sizinle beraber planlayıp sizin hayalinizdeki bahçeyi kavuşmanız için gerekeni yapıyoruz. Memnuniyetiniz bizim için 1. öncelik.',
+    icon: ShieldCheckIcon,
   },
   {
     id: 2,
-    name: "Uygun Fiyat",
+    name: 'Uygun Fiyat',
     description:
-      "Hem kaliteli hem de ekonomik fiyatlandırma politikamızla, hayallerinizdeki bahçeyi size sunuyoruz.",
-    icon: ScaleIcon,
+      'Hem kaliteli hem de ekonomik fiyatlandırma politikamızla, hayallerinizdeki bahçeyi size sunuyoruz.',
+    icon: BanknotesIcon,
   },
   {
     id: 3,
-    name: "Uzman ekip",
+    name: 'Uzman ekip',
     description:
-      "15 yılı aşkın sektör tecrübemizle hayallerinizdeki bahçeyi eksiksiz ve hızlı bir şekilde sunuyoruz.",
+      'Alanında uzman ekibimiz ile hayallerinizdeki bahçeyi eksiksiz ve hızlı bir şekilde sizlere sunuyoruz.',
     icon: BoltIcon,
   },
-];
+]
 const communicationFeatures = [
   {
     id: 1,
-    name: "Site Bakımı",
+    name: 'Site Bakımı',
     description:
-      "Zahmetli ve düzenli takip gerektiren site peyzaj bakımını zengin ekibimizle üstleniyoruz. Size ve sitenizin sakinlerine sadece bahçenizin keyifini çıkartmak kalıyor.",
-    icon: ChatBubbleBottomCenterTextIcon,
+      'Zahmetli ve düzenli takip gerektiren site peyzaj bakımını zengin ekibimizle üstleniyoruz. Size ve sitenizin sakinlerine sadece bahçenizin keyfini çıkarmak kalıyor.',
+    icon: WrenchIcon,
   },
   {
     id: 2,
-    name: "Tasarım - Projelendirme - Uygulama",
+    name: 'Tasarım - Projelendirme - Uygulama',
     description:
-      "360 derece peyzaj hizmeti sunuyoruz. Tasarımdan başlayarak uygulamaya kadar ve hatta sonrasında periyodik bakımları yapmak için uzman kadromuz sizin için 365 gün hazır.",
+      "A'dan Z'ye peyzaj hizmetlerimizle size tam kapsamlı bir çözüm sunuyoruz. Tasarımdan uygulamaya kadar her aşamada sizin yanınızda oluyoruz ve ayrıca sonrasındaki periyodik bakımları da uzman kadromuzla gerçekleştiriyoruz.",
     icon: EnvelopeIcon,
   },
-];
+]
 
 export default function SideWithImages() {
   return (
@@ -123,7 +128,7 @@ export default function SideWithImages() {
                       {item.name}
                     </p>
                   </dt>
-                  <dd className="mt-2 ml-16 text-base text-gray-500">
+                  <dd className="ml-16 mt-2 text-base text-gray-500">
                     {item.description}
                   </dd>
                 </div>
@@ -134,7 +139,7 @@ export default function SideWithImages() {
                 href="/hizmetlerimiz/bireysel-hizmetlerimiz"
                 className="md:text-md flex w-fit items-center justify-center rounded-md 
                                 border border-transparent bg-primary px-8 py-3 font-medium
-                                 text-base text-white hover:bg-primary-dark md:py-4 md:px-10"
+                                 text-base text-white hover:bg-primary-dark md:px-10 md:py-4"
               >
                 Tamamını Gör
               </Link>
@@ -242,7 +247,7 @@ export default function SideWithImages() {
                         {item.name}
                       </p>
                     </dt>
-                    <dd className="mt-2 ml-16 text-base text-gray-500">
+                    <dd className="ml-16 mt-2 text-base text-gray-500">
                       {item.description}
                     </dd>
                   </div>
@@ -253,7 +258,7 @@ export default function SideWithImages() {
                   href="/hizmetlerimiz/kurumsal-hizmetlerimiz"
                   className="md:text-md flex w-fit items-center justify-center rounded-md 
                                 border border-transparent bg-primary px-8 py-3 font-medium
-                                 text-base text-white hover:bg-primary-dark md:py-4 md:px-10"
+                                 text-base text-white hover:bg-primary-dark md:px-10 md:py-4"
                 >
                   Tamamını Gör
                 </Link>
@@ -306,5 +311,5 @@ export default function SideWithImages() {
         </div>
       </div>
     </div>
-  );
+  )
 }
