@@ -49,7 +49,7 @@ const navigation = {
     },
   ],
   hakkimizda: [
-    { name: 'Hakkımızda', href: '/kurumsal' },
+    { name: 'Kurumsal', href: '/kurumsal' },
     { name: 'Blog', href: '/blog' },
     { name: 'İletişim', href: '/iletisim' },
     { name: 'Referanslarımız', href: '/referanslar' },
