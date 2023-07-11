@@ -1,9 +1,6 @@
-
 import Link from 'next/link'
-import MapView from '../MapView/MapView';
-import { MapIcon, PhoneIcon } from '@heroicons/react/24/outline';
-
-
+import MapView from '../MapView/MapView'
+import { MapIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
 // interface Props {
 //   className?: string
@@ -20,31 +17,49 @@ import { MapIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 // const { sitePages } = usePages(pages)
 
-
 const navigation = {
   hizmetlerimiz: [
-    { name: 'Bireysel Hizmetlerimiz', href: '/hizmetlerimiz/bireysel-hizmetlerimiz' },
-    { name: 'Bireysel Tasarim', href: '/hizmetlerimiz/bireysel-hizmetlerimiz/tasarim' },
-    { name: 'Bireysel Uygulama', href: '/hizmetlerimiz/bireysel-hizmetlerimiz/uygulama' },
-    { name: 'Kurumsal Hizmetlerimiz', href: '/hizmetlerimiz/kurumsal-hizmetlerimiz' },
-    { name: 'Kurumsal Tasarım', href: '/hizmetlerimiz/kurumsal-hizmetlerimiz/tasarim' },
-    { name: 'Kurumsal Uygulama', href: '/hizmetlerimiz/kurumsal-hizmetlerimiz/uygulama' },
-    { name: 'Kurumsal Bakım', href: '/hizmetlerimiz/kurumsal-hizmetlerimiz/bakim' },
-
+    {
+      name: 'Bireysel Hizmetlerimiz',
+      href: '/hizmetlerimiz/bireysel-hizmetlerimiz',
+    },
+    {
+      name: 'Bireysel Tasarim',
+      href: '/hizmetlerimiz/bireysel-hizmetlerimiz/tasarim',
+    },
+    {
+      name: 'Bireysel Uygulama',
+      href: '/hizmetlerimiz/bireysel-hizmetlerimiz/uygulama',
+    },
+    {
+      name: 'Kurumsal Hizmetlerimiz',
+      href: '/hizmetlerimiz/kurumsal-hizmetlerimiz',
+    },
+    {
+      name: 'Kurumsal Tasarım',
+      href: '/hizmetlerimiz/kurumsal-hizmetlerimiz/tasarim',
+    },
+    {
+      name: 'Kurumsal Uygulama',
+      href: '/hizmetlerimiz/kurumsal-hizmetlerimiz/uygulama',
+    },
+    {
+      name: 'Kurumsal Bakım',
+      href: '/hizmetlerimiz/kurumsal-hizmetlerimiz/bakim',
+    },
   ],
   hakkimizda: [
-    { name: 'Kurumsal', href: '/kurumsal' },
+    { name: 'Hakkımızda', href: '/kurumsal' },
     { name: 'Blog', href: '/blog' },
     { name: 'İletişim', href: '/iletisim' },
     { name: 'Referanslarımız', href: '/referanslar' },
     { name: 'KVKK Aydınlatma Metni', href: '/kvkk-aydinlatma-metni' },
   ],
   social: [
-
     {
       name: 'Instagram',
       href: 'https://www.instagram.com/kahyaoglupeyzaj',
-      // eslint-disable-next-line 
+      // eslint-disable-next-line
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -55,50 +70,50 @@ const navigation = {
         </svg>
       ),
     },
-
   ],
 }
 
-
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const AnyReactComponent = ({ text }) => <div>{text}</div>
 const Footer = () => {
-
-
   return (
     <footer>
-      <div className=" bg-white mt-12 shadow-inner border-t ">
-
-        <div className="mx-auto max-w-7xl overflow-hidden py-12 px-6 sm:px-6 lg:px-8">
-          <nav className='flex flex-col gap-4 divide-y-2 sm:divide-y-0 sm:grid  sm:grid-cols-3'>
+      <div className=" mt-12 border-t bg-white shadow-inner ">
+        <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:px-6 lg:px-8">
+          <nav className="flex flex-col gap-4 divide-y-2 sm:grid sm:grid-cols-3  sm:divide-y-0">
             <div>
-              <h3 className="text-base font-semibold text-gray-400 tracking-wider ">
+              <h3 className="font-semibold tracking-wider text-base text-gray-400 ">
                 Hizmetlerimiz
               </h3>
               {navigation.hizmetlerimiz.map((item) => (
                 <div key={item.name} className=" py-2">
-                  <Link href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                  <Link
+                    href={item.href}
+                    className="text-base text-gray-500 hover:text-gray-900"
+                  >
                     {item.name}
                   </Link>
                 </div>
               ))}
             </div>
             <div>
-              <h3 className="text-base font-semibold text-gray-400 tracking-wider ">
+              <h3 className="font-semibold tracking-wider text-base text-gray-400 ">
                 Hakkımızda
               </h3>
               {navigation.hakkimizda.map((item) => (
                 <div key={item.name} className=" py-2">
-                  <Link href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                  <Link
+                    href={item.href}
+                    className="text-base text-gray-500 hover:text-gray-900"
+                  >
                     {item.name}
                   </Link>
                 </div>
               ))}
             </div>
 
-            <div className='flex flex-col gap-2'>
+            <div className="flex flex-col gap-2">
               <Link href="/iletisim">
-                <h3 className="text-base font-semibold text-gray-400 tracking-wider ">
+                <h3 className="font-semibold tracking-wider text-base text-gray-400 ">
                   İletişim
                 </h3>
               </Link>
@@ -108,26 +123,32 @@ const Footer = () => {
                 </span>
               </Link>
 
-              <Link href="tel:+905335044584" className='flex items-center '>
-                <PhoneIcon className="h-6 w-6  flex-shrink-0 text-gray-400 mt-1" aria-hidden="true" />
+              <Link href="tel:+905335044584" className="flex items-center ">
+                <PhoneIcon
+                  className="mt-1 h-6  w-6 flex-shrink-0 text-gray-400"
+                  aria-hidden="true"
+                />
                 <p className="mt-1 pl-1  text-base text-gray-500 hover:text-gray-900">
                   +90 533 504 45 84
                 </p>
               </Link>
 
-              <Link className='flex items-center' href="https://goo.gl/maps/Kda5QZsrLoyQ61977">
-                <MapIcon className="h-6 w-6 text-gray-400 mt-1 flex-shrink-0" aria-hidden="true" />
+              <Link
+                className="flex items-center"
+                href="https://goo.gl/maps/Kda5QZsrLoyQ61977"
+              >
+                <MapIcon
+                  className="mt-1 h-6 w-6 flex-shrink-0 text-gray-400"
+                  aria-hidden="true"
+                />
                 <p className="mt-1 pl-1 text-base text-gray-500 hover:text-gray-900">
                   Gölköy mahallesi, Atatürk Cd. no:6/A, 48400 Bodrum
                 </p>
               </Link>
 
-              <div className='w-full aspect-video rounded-xl overflow-clip'>
+              <div className="aspect-video w-full overflow-clip rounded-xl">
                 <MapView />
-
-
               </div>
-
             </div>
           </nav>
 
@@ -141,29 +162,25 @@ const Footer = () => {
             ))}
           </nav> */}
 
-
-
           <div className="mt-8 flex justify-center space-x-6">
             {navigation.social.map((item) => (
-              <Link key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-400 hover:text-gray-500"
+              >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
               </Link>
             ))}
           </div>
-          <p className="mt-8 text-center text-base text-gray-400">&copy; 2023 Kahyaoğlu. Bütün hakları saklıdır.</p>
+          <p className="mt-8 text-center text-base text-gray-400">
+            &copy; 2023 Kahyaoğlu. Bütün hakları saklıdır.
+          </p>
         </div>
-
-
-
-
       </div>
     </footer>
   )
 }
 
-
-
 export default Footer
-
-
