@@ -64,11 +64,10 @@ export const MenuButton: FC<MenuButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`${
-        active
-          ? 'bg-primary-dark text-white'
-          : 'bg-primary text-white opacity-75 hover:bg-primary-dark'
-      } mr-2 rounded-md px-3 py-2 text-sm font-medium`}
+      className={`${active
+        ? 'bg-primary-dark text-white'
+        : 'bg-primary text-white opacity-75 hover:bg-primary-dark'
+        } mr-2 rounded-md px-3 py-2 text-sm font-medium`}
     >
       {children}
     </button>
@@ -274,17 +273,17 @@ export default function Referanslar(props: ReferanslarProps) {
             </div>
           </div>
         )}
-        <motion.ul className="mt-4 grid w-full grid-cols-2 gap-4  px-8 md:grid-cols-4">
+        <motion.ul className="mt-4 grid w-full grid-cols-2 gap-4  px-8 md:grid-cols-4 ">
           {items.map((tasarim) => (
-            <li className=" relative   text-center" key={tasarim.id}>
+            <li className=" relative   text-center " key={tasarim.id}>
               <motion.div
                 key={tasarim.id}
-                className="card relative aspect-square cursor-pointer  bg-background-primary shadow-lg"
+                className="card relative aspect-square cursor-pointer rounded-2xl bg-background-primary shadow-lg"
                 onClick={() => handleCardClick(tasarim)}
                 layoutId={tasarim.id}
               >
                 <Image
-                  className="aspect-square rounded-2xl object-cover"
+                  className="aspect-square  object-cover rounded-2xl"
                   src={tasarim.image}
                   alt={tasarim.title}
                   width={600}
