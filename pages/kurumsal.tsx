@@ -55,7 +55,7 @@ export default function Kurumsal() {
               Güvenilir, Saygılı, Müşteri odaklı
             </h2>
             <p className="mt-6 text-lg text-gray-500">
-              Kahyaoğlu Peyzaj fidancılık, peyzaj mimarisi ve kentsel tasarım
+              <span className='text-primary font-medium'>Kahyaoğlu Peyzaj</span>, fidancılık, peyzaj mimarisi ve kentsel tasarım
               projelerinde daima öncü olup, kaliteli ve şık mekanlar yaratmaya
               devam ediyor. Geçmişten bugüne, müşterilerimize eşsiz deneyimler
               sunmayı sürdürüyoruz. İleri teknolojiye sahip ekipmanlarımız ve
